@@ -24,6 +24,38 @@ public class Programa {
 		System.out.print("Gastos educacionais: ");
 		ge = sc.nextDouble();
 		
+		ras = ras/12;
+		
+		if (ras > 3000 && ras < 5000) {
+			ras = (ras*10)/100;
+		} else if (ras > 5000) {
+			ras = (ras*20)/100;
+		} else {
+			ras = 0.0;
+		}
+		
+		if (raps > 0) {
+			raps = (raps*15)/100;
+		} else {
+			raps = 0.0;
+		}
+		
+		if (ragc > 0) {
+			ragc = (ragc*20)/100;
+		} else {
+			ragc = 0.0;
+		}
+		
+		System.out.println();
+		System.out.println("RELATÓRIO DE IMPOSTO DE RENDA");
+		System.out.println();
+		System.out.println("CONSOLIDADO DE RENDA:");
+		System.out.printf("Imposto sobre salário: %.2f%n", ras*12);
+		System.out.printf("Imposto sobre serviços: %.2f%n", raps);
+		System.out.printf("Imposto sobre ganho de capital: %.2f%n", ragc);
+		
+		
+		
 		
 		sc.close();
 	}
