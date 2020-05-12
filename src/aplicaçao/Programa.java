@@ -11,7 +11,7 @@ public class Programa {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 
-		double ras, raps, ragc, gm, ge;
+		double ras, raps, ragc, gm, ge, md;
 		
 		System.out.print("Renda anual com salário: ");
 		ras = sc.nextDouble();
@@ -48,6 +48,8 @@ public class Programa {
 			ragc = 0.0;
 		}
 		
+		md = (30*(ras+ragc+raps))/100;
+		
 		System.out.println();
 		System.out.println("RELATÓRIO DE IMPOSTO DE RENDA");
 		System.out.println();
@@ -58,9 +60,14 @@ public class Programa {
 		
 		System.out.println();
 		System.out.println("DEDUÇÕES:");
-		System.out.printf("Máximo dedutível: %.2f%n", (30*(ras+ragc))/100);
+		System.out.printf("Máximo dedutível: %.2f%n", md);
 		System.out.printf("Gastos dedutíveis: %.2f%n", (gm+ge));
 		
+		System.out.println();
+		System.out.println("RESUMO:");
+		System.out.printf("Imposto bruto total: %.2f%n", ras+ragc+raps);
+		System.out.printf("Abatimento: %.2f%n", md);
+		System.out.printf("Imposto devido: %.2f%n", (ras+ragc+raps)-md);
 		
 		sc.close();
 	}
