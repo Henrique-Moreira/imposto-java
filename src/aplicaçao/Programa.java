@@ -28,8 +28,10 @@ public class Programa {
 		
 		if (ras > 3000 && ras < 5000) {
 			ras = (ras*10)/100;
+			ras = ras*12;
 		} else if (ras > 5000) {
 			ras = (ras*20)/100;
+			ras = ras*12;
 		} else {
 			ras = 0.0;
 		}
@@ -50,11 +52,14 @@ public class Programa {
 		System.out.println("RELATÓRIO DE IMPOSTO DE RENDA");
 		System.out.println();
 		System.out.println("CONSOLIDADO DE RENDA:");
-		System.out.printf("Imposto sobre salário: %.2f%n", ras*12);
+		System.out.printf("Imposto sobre salário: %.2f%n", ras);
 		System.out.printf("Imposto sobre serviços: %.2f%n", raps);
 		System.out.printf("Imposto sobre ganho de capital: %.2f%n", ragc);
 		
-		
+		System.out.println();
+		System.out.println("DEDUÇÕES:");
+		System.out.printf("Máximo dedutível: %.2f%n", (30*(ras+ragc))/100);
+		System.out.printf("Gastos dedutíveis: %.2f%n", (gm+ge));
 		
 		
 		sc.close();
